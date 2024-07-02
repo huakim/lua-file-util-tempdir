@@ -2,11 +2,11 @@
 package = 'file-util-tempdir'
 version = '0.0.1-1'
 source = {
-  url = "git://github.com/huakim/lua-tempdir_path.git",
+  url = "git://github.com/huakim/lua-file-util-tempdir.git",
  }
 description = {
   detailed = "  ",
-  homepage = "https://github.com/huakim/lua-tempdir_path",
+  homepage = "https://github.com/huakim/lua-file-util-tempdir",
   license = "LGPL",
   summary = "Get OS temporary directory",
  }
