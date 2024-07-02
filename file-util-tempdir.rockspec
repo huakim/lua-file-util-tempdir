@@ -1,5 +1,5 @@
 
-package = 'file_util_tempdir'
+package = 'file-util-tempdir'
 version = '0.0.1-1'
 source = {
   url = "git://github.com/huakim/lua-tempdir_path.git",
