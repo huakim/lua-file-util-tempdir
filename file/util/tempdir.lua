@@ -1,5 +1,8 @@
 local File_Util_Tempdir = {}
 get_os_name = require 'get_os_name'
+lfs = require 'lfs'
+unistd = require 'posix.unistd'
+bit = require 'bit32'
 -- DATE
 -- VERSION
 local jit_os = get_os_name()
@@ -40,17 +43,17 @@ local function get_user_tempdir()
         if not info then
             error("Can't stat tempdir '" .. dir .. "': " .. errno())
         end
-        if info[5] == os.geteuid() and bit.band(info[3], 0x022) == 0 then
+        if info[5] == unistd.geteuid() and bit.band(info[3], 0x022) == 0 then
             return dir
         end
         local i = 0
         while true do
-            local subdir = dir .. '/' .. os.geteuid() .. (i > 0 and ('.' .. i) or '')
+            local subdir = dir .. '/' .. unistd.geteuid() .. (i > 0 and ('.' .. i) or '')
             local subinfo = {lfs.attributes(subdir)}
             if not subinfo then
                 lfs.mkdir(subdir, 0x700)
                 return subdir
-            elseif subinfo[5] == os.geteuid() and bit.band(subinfo[3], 0x022) == 0 then
+            elseif subinfo[5] == unistd.geteuid() and bit.band(subinfo[3], 0x022) == 0 then
                 return subdir
             else
                 i = i + 1
