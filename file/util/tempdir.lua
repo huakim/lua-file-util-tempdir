@@ -56,7 +56,6 @@ local function get_user_tempdir()
         local i = 0
         while true do
             local subdir = dir..'/'..uid..(i>0 and ('.'..i) or '')
-            print(subdir)
             local subinfo = lfs.attributes(subdir)
             if not subinfo
             then
