@@ -21,5 +21,5 @@ dependencies = {
   "get_os_name",
   "luafilesystem",
   "bit32",
-  "posix",
+  "luaposix",
  }
