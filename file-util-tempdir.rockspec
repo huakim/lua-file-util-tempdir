@@ -20,6 +20,5 @@ dependencies = {
   "lua >= 5.1",
   "get_os_name",
   "luafilesystem",
-  "bit32",
   "luaposix",
  }
