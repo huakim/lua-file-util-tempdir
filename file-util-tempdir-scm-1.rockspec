@@ -1,8 +1,8 @@
 
 package = 'file-util-tempdir'
-version = '0.0.1-1'
+version = 'scm-1'
 source = {
-  url = "git://github.com/huakim/lua-file-util-tempdir.git",
+  url = "https://github.com/huakim/lua-file-util-tempdir/archive/refs/heads/"..version..".zip".."#/"..package.."-"..version..'.zip',
  }
 description = {
   detailed = "  ",
